@@ -14,3 +14,13 @@ jobs:
           java-version: 17
       - name: Unit & Integration Tests
         run: mvn -B verify
+      - name: Sonar
+        if: success()
+        run: >
+          mvn -B verify -DskipTests sonar:sonar
+          -Dsonar.projectKey=alvaroavilesr_iwvg-devops-aviles-alvaro2
+          -Dsonar.organization=alvaroavilesr
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.login=$SONAR_TOKEN
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
