@@ -27,6 +27,20 @@ public class FractionTest {
     }
 
     @Test
+    @DisplayName("Test setNumerator()")
+    void testSetNumerator() {
+        fraction1.setNumerator(1);
+        assertEquals(1, fraction1.getNumerator());
+    }
+
+    @Test
+    @DisplayName("Test setDenominator()")
+    void testSetDenominator() {
+        fraction1.setDenominator(1);
+        assertEquals(1, fraction1.getDenominator());
+    }
+
+    @Test
     @DisplayName("Test empty constructor")
     void testEmptyConstructor() {
         assertEquals(1, fraction1.getNumerator());
