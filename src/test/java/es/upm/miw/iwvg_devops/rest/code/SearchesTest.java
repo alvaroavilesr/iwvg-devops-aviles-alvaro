@@ -37,4 +37,12 @@ public class SearchesTest {
         assertEquals(null, result);
     }
 
+    @Test
+    @DisplayName("Test findFractionDivisionByUserId(String id)")
+    void testFindFractionDivisionByUserId() {
+        Fraction result = searches.findFractionDivisionByUserId("4");
+        assertEquals(8, result.getNumerator());
+        assertEquals(8, result.getDenominator());
+    }
+
 }
