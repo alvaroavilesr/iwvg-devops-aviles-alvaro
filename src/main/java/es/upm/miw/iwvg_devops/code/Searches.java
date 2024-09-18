@@ -17,7 +17,7 @@ public class Searches {
         return new UsersDatabase().findAll()
                 .filter(user -> id.equals(user.getId()))
                 .flatMap(user -> user.getFractions().stream())
-                .reduce(new Fraction(1,1), Fraction::divide);
+                .reduce(Fraction::divide).orElse(null);
     }
 
     public Stream<Double> findDecimalImproperFractionByUserName(String name) {
@@ -26,5 +26,12 @@ public class Searches {
                 .flatMap(user -> user.getFractions().stream())
                 .filter(Fraction::isImproper)
                 .map(Fraction::decimal);
+    }
+
+    public Fraction findFractionSubtractionByUserName(String name) {
+        return new UsersDatabase().findAll()
+                .filter(user -> name.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(Fraction::subtract).orElse(null);
     }
 }

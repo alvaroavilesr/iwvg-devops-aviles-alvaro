@@ -45,10 +45,18 @@ public class SearchesTest {
 
     @Test
     @DisplayName("Test findDecimalImproperFractionByUserName(String name)")
-    void TestFindDecimalImproperFractionByUserName() {
+    void testFindDecimalImproperFractionByUserName() {
         Stream<Double> result = searches.findDecimalImproperFractionByUserName("Oscar");
         List<Double> resultList = result.toList();
         assertEquals(2.0, resultList.get(0));
         assertEquals(-0.5, resultList.get(1));
+    }
+
+    @Test
+    @DisplayName("Test findFractionSubtractionByUserName(String name)")
+    void testFindFractionSubtractionByUserName() {
+        Fraction result = searches.findFractionSubtractionByUserName("Antonio");
+        assertEquals(0, result.getNumerator());
+        assertEquals(-6, result.getDenominator());
     }
 }
