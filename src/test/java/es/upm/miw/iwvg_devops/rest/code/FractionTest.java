@@ -12,6 +12,7 @@ public class FractionTest {
     Fraction fraction1;
     Fraction fraction2;
     Fraction fraction3;
+    Fraction fraction4;
     Fraction fractionEq1;
     Fraction fractionEq2;
 
@@ -20,6 +21,7 @@ public class FractionTest {
         fraction1 = new Fraction();
         fraction2 = new Fraction(2,5);
         fraction3 = new Fraction(4,5);
+        fraction4 = new Fraction(5,4);
         fractionEq1 = new Fraction(5,10);
         fractionEq2 = new Fraction(10,20);
     }
@@ -51,15 +53,33 @@ public class FractionTest {
     }
 
     @Test
+    @DisplayName("Test isProper() false")
+    void testIsProperFalse() {
+        assertFalse(fraction4.isProper());
+    }
+
+    @Test
     @DisplayName("Test isImproper()")
     void testIsImproper() {
         assertFalse(fraction2.isImproper());
     }
 
     @Test
+    @DisplayName("Test isImproper() true")
+    void testIsImproperTrue() {
+        assertTrue(fraction4.isImproper());
+    }
+
+    @Test
     @DisplayName("Test isEquivalent()")
     void testIsEquivalent() {
         assertTrue(fractionEq1.isEquivalent(fractionEq2));
+    }
+
+    @Test
+    @DisplayName("Test isEquivalent() false")
+    void testIsEquivalentFalse() {
+        assertFalse(fraction1.isEquivalent(fraction2));
     }
 
     @Test
