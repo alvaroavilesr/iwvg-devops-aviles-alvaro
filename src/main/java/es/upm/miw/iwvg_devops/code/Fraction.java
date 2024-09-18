@@ -78,6 +78,15 @@ public class Fraction {
         }
     }
 
+    public Fraction subtract(Fraction fraction){
+        if(this.denominator == fraction.getDenominator()){
+            return new Fraction(this.numerator - fraction.getNumerator(), this.denominator);
+        }else{
+            return new Fraction((this.numerator * fraction.getDenominator()) - (this.denominator * fraction.getNumerator()),
+                    this.denominator * fraction.getDenominator());
+        }
+    }
+
     public Fraction multiply(Fraction fraction){
         return new Fraction(this.numerator * fraction.getNumerator(),
                 this.denominator * fraction.getDenominator());

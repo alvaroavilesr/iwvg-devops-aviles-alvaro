@@ -113,6 +113,22 @@ public class FractionTest {
     }
 
     @Test
+    @DisplayName("Test subtract() with same denominator")
+    void testSubtractSameDenominator() {
+        Fraction result = fraction2.subtract(fraction3);
+        assertEquals(-2, result.getNumerator());
+        assertEquals(5, result.getDenominator());
+    }
+
+    @Test
+    @DisplayName("Test subtract() with different denominator")
+    void testSubtractDifferentDenominator() {
+        Fraction result = fraction3.subtract(fraction4);
+        assertEquals(-9, result.getNumerator());
+        assertEquals(20, result.getDenominator());
+    }
+
+    @Test
     @DisplayName("Test multiply()")
     void testMultiply() {
         Fraction result = fraction2.multiply(fraction3);
