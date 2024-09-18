@@ -13,11 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
 
-    User userEmpty;
-    User userFull;
-    Fraction fraction1;
-    Fraction fraction2;
-    Fraction fraction3;
+    private User userEmpty;
+    private User userFull;
+    private Fraction fraction1;
+    private Fraction fraction2;
 
     @BeforeEach
     void setUp() {
@@ -66,7 +65,7 @@ public class UserTest {
     @Test
     @DisplayName("Test addFraction()")
     void testAddFraction() {
-        fraction3 = new Fraction(100,5);
+        Fraction fraction3 = new Fraction(100, 5);
         userEmpty.addFraction(fraction3);
 
         assertFalse(userEmpty.getFractions().isEmpty());
