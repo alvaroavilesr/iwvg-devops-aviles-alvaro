@@ -43,6 +43,27 @@ public class UserTest {
     }
 
     @Test
+    @DisplayName("Test setName()")
+    void testSetName() {
+        userEmpty.setName("Alvaro");
+        assertEquals("Alvaro", userEmpty.getName());
+    }
+
+    @Test
+    @DisplayName("Test setFamilyName()")
+    void testSetFamilyName() {
+        userEmpty.setFamilyName("Aviles");
+        assertEquals("Aviles", userEmpty.getFamilyName());
+    }
+
+    @Test
+    @DisplayName("Test setFractions()")
+    void testSetFractions() {
+        userEmpty.setFractions(List.of(fraction1, fraction2));
+        assertFalse(userEmpty.getFractions().isEmpty());
+    }
+
+    @Test
     @DisplayName("Test addFraction()")
     void testAddFraction() {
         fraction3 = new Fraction(100,5);
