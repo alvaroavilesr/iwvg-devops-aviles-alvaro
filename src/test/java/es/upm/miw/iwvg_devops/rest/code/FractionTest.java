@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
 
-    Fraction fraction1;
-    Fraction fraction2;
-    Fraction fraction3;
-    Fraction fraction4;
-    Fraction fractionEq1;
-    Fraction fractionEq2;
+    private Fraction fraction1;
+    private Fraction fraction2;
+    private Fraction fraction3;
+    private Fraction fraction4;
+    private Fraction fractionEq1;
+    private Fraction fractionEq2;
 
     @BeforeEach
     void setUp() {
