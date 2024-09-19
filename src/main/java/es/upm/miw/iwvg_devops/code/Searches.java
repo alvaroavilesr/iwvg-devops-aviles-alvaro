@@ -26,6 +26,7 @@ public class Searches {
                 .flatMap(user -> user.getFractions().stream())
                 .filter(Fraction::isImproper)
                 .map(Fraction::decimal);
+
     }
 
     public Fraction findFractionSubtractionByUserName(String name) {
